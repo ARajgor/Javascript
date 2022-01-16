@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        document.write("<h1>Hello World</h1><hr>");
+
+        var a;   //undefined
+        document.write(typeof(a)+"<hr>");
+
+        a=null;   //null
+        document.write(a+"<hr>");
+
+        a=10;    //number
+        var b=20;
+        var c=a+b;
+        document.write(a+"+"+b+"="+c+"<hr>");
+
+        a1="10"   //String
+        if(a==a1){
+            document.write("a=10 and a1=\"10\" => a==a1 (a number and a1 string but result is true. only value are match not data type.)"+"<hr>");
+        }
+        else{
+            document.write("(values are not match.)"+"<hr>");
+        }
+
+        if(a===a1){
+            document.write("a===a1  (Both value and data type are match.)"+"<hr>");
+        }
+        else{
+            document.write("a!==a1  (Both value and data type are not match.)"+"<hr>");
+        }
+
+        var d = 0;
+        switch (d) {
+            case 0:
+                c=a+b;
+                document.write("swich case: "+c+"<hr>");
+                break;
+            case 1:
+                c=a-b;
+                document.write("swich case: "+c+"<hr>");
+                break;
+            case 2:
+                c=a*b;
+                document.write("swich case: "+c+"<hr>");
+                break;
+            case 3:
+                c=a/b;
+                document.write("swich case: "+c+"<hr>");
+                break;
+            default:
+                text = "No valid value";
+        }
+
+        while(d<10){
+            document.write(d);
+            d++;
+        }
+        document.write(" (while loop) <hr>");
+
+        do{
+            document.write(d);
+            d++;
+        }while(d<10);
+        document.write(" (do while loop) <hr>");
+
+        for(d=0;d<10;d++){
+            document.write(d);
+        }
+        document.write(" (for loop) <hr>");
+        
+        function sum(a,b){
+            return a+b
+        }
+        document.write("Function: "+sum(30,50)+"<hr>");
+
+        var e=[10,20,70,80,30,40,50,60,90];
+        document.write("List: "+e+"<br>");
+        document.write("List[3]: "+e[3]+"<br>");
+        document.write("List length: "+e.length+"<br>");
+        e.push(100);
+        document.write("List post 100: "+e+"<br>");
+        e.pop();
+        document.write("List pop: "+e+"<br>");
+        e.shift();
+        document.write("List shift: "+e+"<br>");
+        e.unshift();
+        document.write("List unshift: "+e+"<br>");
+        e.sort();
+        document.write("List sort assending(sort): "+e+"<br>");
+        e.reverse();
+        document.write("List sort deccending(reverse): "+e+"<br>");
+        document.write("List isArray: "+Array.isArray(e)+"<br>");
+        document.write("List concat: "+e.concat([100,110,120])+"<br>");
+        document.write("List indexOf 50: "+e.indexOf(50)+"<hr>");
+
+        //alert("hello");
+
+        //prompt("What is your name?");
+
+        //confirm("Do you want to visit website?");
+
+        function count1(){
+            window.location="https://www.youtube.com/";
+            //or window.location.assign("https://www.youtube.com/");
+        }
+        
+
+    </script>
+    <button id="b" onclick="count1()">count</button>
+    <p id="p1" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, dolor. Culpa nulla recusandae modi eveniet sint nobis consequuntur nostrum dolores labore doloremque rerum, voluptatum maiores! Error magnam alias at sit.</p>
+    <script type="text/javascript">
+        //create node
+        var pera=document.createElement("p"); //create element
+        var textn=document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit.");  //create text node
+        pera.append(textn);   //for create tag in console
+        document.body.appendChild(pera);  //for create tag in html
+        document.write("<hr>")
+        //.getElementById("id").innerHTML use to print value in id on html
+        //.getElementsByClassName("id")[index].innerHTML use to print value in class index on html
+        //.getElementsByTagName("p"); use to get tag.
+        //.querySelector is use to select parant list tag to apply query
+        //.firstChild and .lastChild use for access first and last child from list(ul or ol)
+        document.getElementById('p1').style.color="green";
+        document.getElementById('p1').setAttribute("style","color: blueviolet; background-color:cadetblue; text-align:center; height: 40px");
+        
+        document.write(window.location.hash+"<br>");
+        document.write(window.location.href+"<br>");
+        document.write(window.location.hostname+"<br>");
+        document.write(window.location.pathname+"<br>");
+        document.write(window.location.protocol+"<br>");
+        document.write(window.location.origin+"<br>");
+        document.write(window.location.port+"<hr>");
+
+        document.write(new Date+"<br>");
+        document.write(new Date(2029,0,25)+"<br>"); //month count 12(0-11)
+        document.write("Date: "+new Date().getDate()+"<br>");
+        document.write("Day in week: "+new Date().getDay()+"<br>");
+        document.write("month: "+new Date().getMonth()+"<br>");
+        document.write("year: "+new Date().getFullYear()+"<br>");
+        document.write("hour: "+new Date().getHours()+"<br>");
+        document.write("Minute: "+new Date().getMinutes()+"<br>");
+        document.write("Second: "+new Date().getSeconds()+"<br>");
+        document.write("time: "+new Date().toLocaleTimeString()+"<br>");
+        document.write("time: "+new Date().toLocaleDateString()+"<br>");
+    </script>
+    <hr><button onclick="clearInterval(delay)"> stop </button><br>
+    <p id="d_clock">dddd</p><hr>
+    <script type="text/javascript">
+        var delay=setInterval(clkT,1000)
+        function clkT(){
+            var d1=new Date();
+            var date1=d1.toLocaleTimeString();
+            document.getElementById('d_clock').innerHTML=date1;
+        } 
+    </script>
+    <script type="text/javascript">          
+        document.write("<h3>ECMA Script 6...</h3>");//ES6
+        const af=(af1,bf1) => af1+bf1;   //1.arrow function
+        document.write(af(2,3)+"<hr>");
+
+        var a=()=>{       //2. let is use within a block 
+            let a1=10;
+            if(true){
+                let a1=20;
+                document.write("a1="+a1+"<br>");
+            }
+            document.write("a1="+a1+"<hr>");
+        }
+        a();
+
+        const biodates={name:'krish',age:20,born:'surat',dob:'11-09-2001'}   //3.Desructuring
+        name1=biodates.name; //name use with object like that..
+        const{age,born,dob}=biodates; //but use paramiter without assign another variable in es6
+
+        let s1="my name is "+name1+"."   //4. templates string
+        let s2=`my name is ${name1}.`
+        document.write(s2+"<hr>")
+
+        function yourAge1(age){return age;}   //5.Default Argument
+        document.write(yourAge1(18)+"<br>");
+        function yourAge2(age=18){return age;}   //5.Default Argument
+        document.write(yourAge2()+"<br>");
+        document.write(yourAge2(20)+"<hr>");
+        
+        const obj1={name:name1,age:age,born:born,dob:dob}    //6.Object Properties
+        const obj2={name,age,born,dob}
+    </script>
+</body>
+</html>
